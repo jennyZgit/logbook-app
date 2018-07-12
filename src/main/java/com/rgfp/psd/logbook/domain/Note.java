@@ -53,7 +53,17 @@ public class Note {
     }
 
     public String getSummary() {
-        // not implemented
-        return "";
+        if (getContent().length()<15){
+            return getContent();
+        }else{
+            return getContent().substring(0,15);
+        }
+
+    }
+    public Note clone(){
+        Note noteCopia = new Note();
+        noteCopia.setTitle(this.getTitle());
+        noteCopia.setContent(this.getContent());
+        return noteCopia;
     }
 }
